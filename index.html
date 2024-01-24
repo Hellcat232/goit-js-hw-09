@@ -5,11 +5,14 @@
     <link rel="icon" type="image/svg+xml" href="/goit-js-hw-09/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
-    import SimpleLightbox from "simplelightbox"; import
-    "simplelightbox/dist/simple-lightbox.min.css";
+
     
+    <script type="module" crossorigin src="/goit-js-hw-09/assets/modulepreload-polyfill-ec808ebb.js"></script>
+    <script type="module" crossorigin src="/goit-js-hw-09/assets/vendor-c9def49e.js"></script>
+    <script type="module" crossorigin src="/goit-js-hw-09/assets/1-gallery-18ef2bbe.js"></script>
+    <link rel="stylesheet" href="/goit-js-hw-09/assets/1-gallery-b01fca73.css">
+    <link rel="stylesheet" href="/goit-js-hw-09/assets/vendor-8c8fa3ea.css">
     <link rel="stylesheet" href="/goit-js-hw-09/assets/index-10c40100.css">
-    <link rel="stylesheet" href="/goit-js-hw-09/assets/my-styles-b01fca73.css">
   </head>
   <body>
     <!-- Loads the specified .html file -->
@@ -25,7 +28,7 @@
   <body>
     <ul class="gallery"></ul>
 
-    <script src="./js/1-gallery.js"></script>
+    
   </body>
 </html>
 
@@ -37,7 +40,19 @@
     <title>Document</title>
   </head>
   <body>
-    <script src="./js/2-form.js"></script>
+    <form class="feedback-form" autocomplete="off">
+      <label>
+        Email
+        <input type="email" name="email" autofocus />
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="8"></textarea>
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+
+    
   </body>
 </html>
 
