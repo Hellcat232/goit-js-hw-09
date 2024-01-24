@@ -64,7 +64,10 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector('.gallery');
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
+const galleryParent = document.querySelector('.gallery');
 
 function createGallery() {
   const result = images
@@ -77,7 +80,19 @@ function createGallery() {
     })
     .join('');
 
-  gallery.innerHTML = result;
+  galleryParent.innerHTML = result;
 }
 
 createGallery();
+
+const options = {
+  caption: true,
+  captionSelector: 'img',
+  captionType: 'attr',
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  animation: 250,
+};
+
+let gallery = new SimpleLightbox('.gallery a', options);
+gallery.on('show.simplelightbox', function () {});
