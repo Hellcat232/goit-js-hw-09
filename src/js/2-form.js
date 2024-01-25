@@ -1,7 +1,6 @@
 const MAIN_KEY = 'feedback-form-state';
 
 const form = document.querySelector('.feedback-form');
-const textArea = form.querySelector('textarea');
 
 form.addEventListener('input', onFormHandle);
 form.addEventListener('submit', onSubmitHendle);
@@ -33,10 +32,8 @@ function onFormHandle() {
     message,
   };
 
-  //   console.log(objValues);
   saveToLocal(MAIN_KEY, objValues);
 }
-onFormHandle();
 
 function saveToLocal(key, value) {
   const arch = JSON.stringify(value);
