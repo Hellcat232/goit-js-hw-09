@@ -5,21 +5,23 @@ const textArea = form.querySelector('textarea');
 
 form.addEventListener('input', onFormHandle);
 form.addEventListener('submit', onSubmitHendle);
+const checkEmail = '';
+const checkMessage = '';
 
 function onSubmitHendle(event) {
   event.preventDefault();
-
   const email = form.elements.email.value;
   const message = form.elements.message.value;
+  if (email !== checkEmail && message !== checkMessage) {
+    const objValues = {
+      email,
+      message,
+    };
 
-  const objValues = {
-    email,
-    message,
-  };
-
-  console.log(objValues);
-  localStorage.removeItem(MAIN_KEY);
-  form.reset();
+    console.log(objValues);
+    localStorage.removeItem(MAIN_KEY);
+    form.reset();
+  }
 }
 
 function onFormHandle() {
