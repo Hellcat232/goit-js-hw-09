@@ -4,14 +4,12 @@ const form = document.querySelector('.feedback-form');
 
 form.addEventListener('input', onFormHandle);
 form.addEventListener('submit', onSubmitHendle);
-const checkEmail = '';
-const checkMessage = '';
 
 function onSubmitHendle(event) {
   event.preventDefault();
   const email = form.elements.email.value;
   const message = form.elements.message.value;
-  if (email !== checkEmail && message !== checkMessage) {
+  if (form.elements.email.value !== '' && form.elements.message.value !== '') {
     const objValues = {
       email,
       message,
@@ -28,8 +26,8 @@ function onFormHandle() {
   const message = form.elements.message.value;
 
   const objValues = {
-    email,
-    message,
+    email: email.trim(),
+    message: message.trim(),
   };
 
   saveToLocal(MAIN_KEY, objValues);
@@ -45,7 +43,7 @@ function loadFromLocal(key) {
 
   try {
     return JSON.parse(arch);
-  } catch {
+  } catch (error) {
     return arch;
   }
 }
