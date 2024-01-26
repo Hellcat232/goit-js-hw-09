@@ -91,8 +91,7 @@ const options = {
   captionType: 'attr',
   captionsData: 'alt',
   captionPosition: 'bottom',
-  animation: 250,
+  captionDelay: 250,
 };
 
 let gallery = new SimpleLightbox('.gallery a', options);
-gallery.on('show.simplelightbox', function () {});
